@@ -1,5 +1,5 @@
 venv/
-saved_model/
+backend/model/saved/
 .DS_Store
 node_modules/
 /dist

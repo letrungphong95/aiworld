@@ -2,16 +2,26 @@
   <div>
     <v-content>
       <section>
-        <v-parallax src="../assets/hero.jpeg" height="600">
+        <v-parallax src="../assets/ironman1.jpg" height="650">
           <v-layout
             column
             align-center
             justify-center
             class="white--text"
           >
-            <img src="../assets/phong.jpeg" alt="Vuetify.js" height="200" style="border-radius: 50%">
+            <!-- <img src="../assets/phong.jpeg" alt="Vuetify.js" height="200" style="border-radius: 50%"> -->
+            <img width="120" height="120" class="avatar" alt="sample-image" src="../assets/phong.jpeg">
             <h1 class="white--text mb-2 display-1 text-center">Welcome to AI World</h1>
-            <div class="subheading mb-4 text-center">Powered by AI Team</div>
+            <div class="subheading mb-4 text-center">
+                <v-flex sm4 offset-sm4 class="my-4">
+                    <div class="text-center">
+                        <p>I am just an AI enthusiast. I love working with machine, so I work as an AI Engineer. 
+                        Futhermore, I also have experience of working with web developing.
+                        Now, I want to have a chance to share my knowledge about AI, Web.
+                        My next goal is to be a Magical Dev to 🔥the world.</p>
+                    </div>
+                </v-flex>
+            </div>
             <v-btn
               class="mt-12"
               color="blue lighten-2"
@@ -19,7 +29,7 @@
               large
               href="/pre-made-themes"
             >
-              Get Started
+              Get Started Demo
             </v-btn>
           </v-layout>
         </v-parallax>
@@ -34,106 +44,195 @@
         >
           <v-flex xs12 sm4 class="my-4">
             <div class="text-center">
-              <h2 class="headline">The best way to start learning AI from scratch</h2>
-              <span class="subheading">
-                Is is choosing the correct way for learning
+              <!-- <h2 class="headline">The best way to start learning AI from scratch</h2> -->
+              <h2 class="display-2 font-weight-light">What is the best way to start learning AI from scratch?</h2>
+              <span class="subheading display-1 font-weight-light">
+                The answer is you need to love it first.
               </span>
             </div>
           </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap align-center>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-palette</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">Material Design</div>
+
+            <v-timeline :dense="$vuetify.breakpoint.smAndDown">
+                <v-timeline-item
+                color="purple lighten-2"
+                fill-dot
+                right
+                >
+                <v-card>
+                    <v-card-title class="purple lighten-2">
+                    <v-icon
+                        dark
+                        size="42"
+                        class="mr-4"
+                    >
+                        mdi-magnify
+                    </v-icon>
+                    <h2 class="display-1 white--text font-weight-light">Choose correct way to learn</h2>
                     </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-flash</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Fast development</div>
+                    <v-container>
+                    <v-row>
+                        <v-col cols="12" md="12">
+                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+                </v-timeline-item>
+
+                <v-timeline-item
+                color="amber lighten-1"
+                fill-dot
+                left
+                small
+                >
+                <v-card>
+                    <v-card-title class="amber lighten-1 justify-end">
+                    <h2 class="display-1 mr-4 white--text font-weight-light">Know what AI is</h2>
+                    <v-icon
+                        dark
+                        size="42"
+                    >mdi-home-outline</v-icon>
                     </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-card flat class="transparent">
-                    <v-card-text class="text-center">
-                      <v-icon x-large class="blue--text text--lighten-2">mdi-wrench</v-icon>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-center">Completely Open Sourced</div>
+                    <v-container>
+                    <v-row>
+                        <v-col cols="12" md="8">
+                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+                        </v-col>
+                        <v-col cols="12" md="4">
+                        Lorem ipsum dolor sit amet, no nam oblique veritus.
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+                </v-timeline-item>
+
+                <v-timeline-item
+                color="cyan lighten-1"
+                fill-dot
+                right
+                >
+                <v-card>
+                    <v-card-title class="cyan lighten-1">
+                    <v-icon
+                        class="mr-4"
+                        dark
+                        size="42"
+                    >
+                        mdi-eye
+                    </v-icon>
+                    <h2 class="display-1 white--text font-weight-light">Computer Vision</h2>
                     </v-card-title>
-                    <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-          </v-flex>
+                    <v-container>
+                    <v-row>
+                        <v-col
+                        v-for="n in 3"
+                        :key="n"
+                        cols="12"
+                        md="4"
+                        >
+                        Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+                </v-timeline-item>
+
+                <v-timeline-item
+                color="red lighten-1"
+                fill-dot
+                left
+                small
+                >
+                <v-card>
+                    <v-card-title class="red lighten-1 justify-end">
+                    <h2 class="display-1 mr-4 white--text font-weight-light">Natural Language Processing</h2>
+                    <v-icon
+                        dark
+                        size="42"
+                    >
+                        mdi-text-to-speech
+                    </v-icon>
+                    </v-card-title>
+                    <v-container>
+                    <v-row>
+                        <v-col class="hidden-sm-and-down" md="2">
+                        <v-icon size="64">mdi-server-network</v-icon>
+                        </v-col>
+                        <v-col cols="12" md="10">
+                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+                </v-timeline-item>
+
+                <v-timeline-item
+                color="green lighten-1"
+                fill-dot
+                right
+                >
+                <v-card>
+                    <v-card-title class="green lighten-1">
+                    <v-icon
+                        class="mr-4"
+                        dark
+                        size="42"
+                    >
+                        mdi-weather-cloudy
+                    </v-icon>
+                    <h2 class="display-1 white--text font-weight-light">Product</h2>
+                    </v-card-title>
+                    <v-container>
+                    <v-row>
+                        <v-col>
+                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                        </v-col>
+                    </v-row>
+                    </v-container>
+                </v-card>
+                </v-timeline-item>
+            </v-timeline>
+
         </v-layout>
       </section>
 
       <section>
-        <v-parallax src="../assets/section.jpg" height="380">
-          <v-layout column align-center justify-center>
-            <div class="headline white--text mb-4 text-center">Web development has never been easier</div>
-            <em>Kick-start your application today</em>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              href="/pre-made-themes"
+        <v-carousel
+            cycle
+            height="400"
+            hide-delimiter-background
+            show-arrows-on-hover
+        >
+            <v-carousel-item
+            v-for="(slide, i) in slides"
+            :key="i"
             >
-              Get Started
-            </v-btn>
-          </v-layout>
-        </v-parallax>
+            <v-sheet
+                :color="colors[i]"
+                height="100%"
+            >
+                <v-row
+                class="fill-height"
+                align="center"
+                justify="center"
+                >
+                <div class="display-3">{{ slide }} Slide</div>
+                </v-row>
+            </v-sheet>
+            </v-carousel-item>
+        </v-carousel>
       </section>
 
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-12">
-            <v-flex xs12 sm4>
-              <v-card flat class="transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Company info</div>
-                </v-card-title>
-                <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
-                  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-                  Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti.
-                </v-card-text>
-              </v-card>
-            </v-flex>
             <v-flex xs12 sm4 offset-sm1>
               <v-card flat class="transparent">
-                <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Contact us</div>
+                <v-card-title class="text-center">
+                  <div class="headline">Good luck and have a good day!</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                  "Live as if you were to die tomorrow, learn as if you were to live forever."
                 </v-card-text>
                 <v-list class="transparent">
                   <v-list-item>
@@ -141,7 +240,7 @@
                       <v-icon class="blue--text text--lighten-2">mdi-phone</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>777-867-5309</v-list-item-title>
+                      <v-list-item-title>01206215650</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item>
@@ -149,7 +248,7 @@
                       <v-icon class="blue--text text--lighten-2">mdi-map-marker</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>Chicago, US</v-list-item-title>
+                      <v-list-item-title>Da Nang, Viet Nam</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                   <v-list-item>
@@ -157,7 +256,7 @@
                       <v-icon class="blue--text text--lighten-2">mdi-email</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                      <v-list-item-title>john@vuetifyjs.com</v-list-item-title>
+                      <v-list-item-title>letrungphong95@gmail.com</v-list-item-title>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -182,3 +281,37 @@
     </v-content>
   </div>
 </template>
+
+<script>
+  export default {
+    data () {
+      return {
+        colors: [
+          'indigo',
+          'warning',
+          'pink darken-2',
+          'red lighten-1',
+          'deep-purple accent-4',
+        ],
+        slides: [
+          'First',
+          'Second',
+          'Third',
+          'Fourth',
+          'Fifth',
+        ],
+      }
+    },
+  }
+</script>
+
+<style scoped>
+    .avatar {
+        /* width: 60%; */
+        scale: 60%;
+        border-radius: 50%;
+        height: 214px;
+        width: 214px;
+        object-fit: cover;
+    }
+</style>

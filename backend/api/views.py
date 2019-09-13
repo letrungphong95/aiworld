@@ -37,14 +37,13 @@ def preprocess_image(path, size):
     resized_image = resized_image.reshape((1, size, size, 3))
     return resized_image
 
-
 """
 Method: POST
 Src: {APP_URL}/api/object-label
 Header: 
 Body:
 {
-	"image_path": ""
+	"image_path": "backend/samples/01.jpg"
 } 
 Response:
 {
@@ -66,7 +65,7 @@ def predict_label(request):
             result = model.predict(image)
             print('haha')
             print(result)
-            return HttpResponse(json.dumps({"label":label[result.argmax()], "scores": str(round(result.max(), 2))}))
+            return HttpResponse(json.dumps({"label":label[result.argmax()], "scores": str(round(result.max()*100, 2)) + "%"}))
     else:
         return HttpResponseBadRequest("GET is not allowed")
 

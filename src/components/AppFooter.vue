@@ -8,8 +8,8 @@
       flat
       tile
     >
-      <v-card-title class="deep-orange lighten-5">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+      <v-card-title class="grey lighten-5">
+        <strong class="subheading">Get connected and chill with me on social networks!</strong>
 
         <div class="flex-grow-1"></div>
 
@@ -23,7 +23,7 @@
         </v-btn>
       </v-card-title>
 
-      <v-card-actions dark class="brown lighten-4 justify-center">
+      <v-card-actions dark class="grey lighten-1 justify-center">
         {{ new Date().getFullYear() }} — <strong>AI Course</strong>
       </v-card-actions>
     </v-card>

@@ -13,6 +13,8 @@ graph = tf.get_default_graph()
 set_session(sess)
 model = load_model('backend/model/saved/vgg16_catdog.h5')
 label = ['Cat','Dog']
+import base64 
+
 
 def preprocess_image(path, size):
     """
@@ -56,6 +58,8 @@ def predict_label(request):
     if request.method == "POST":
         data = json.loads(request.body.decode('utf-8'))
         img_path = data['image_path']
+        data = base64.b64encode(img_path)
+        print('haha'+data)
         image = preprocess_image(path=img_path, size=224)
         global sess
         global graph

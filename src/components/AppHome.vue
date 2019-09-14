@@ -2,7 +2,7 @@
   <div>
     <v-content>
       <section>
-        <v-parallax src="../assets/ironman1.jpg" height="650">
+        <v-parallax src="../assets/ironman1.jpg" height="500">
           <v-layout
             column
             align-center
@@ -11,8 +11,8 @@
           >
             <!-- <img src="../assets/phong.jpeg" alt="Vuetify.js" height="200" style="border-radius: 50%"> -->
             <img width="120" height="120" class="avatar" alt="sample-image" src="../assets/phong.jpeg">
-            <h1 class="white--text mb-2 display-1 text-center">Welcome to AI World</h1>
-            <div class="subheading mb-4 text-center">
+            <h1 class="white--text display-1 text-center">Welcome to AI World</h1>
+            <div class="subheading text-center">
                 <v-flex sm4 offset-sm4 class="my-4">
                     <div class="text-center">
                         <p>I am just an AI enthusiast. I love working with machine, so I work as an AI Engineer. 
@@ -22,15 +22,16 @@
                     </div>
                 </v-flex>
             </div>
-            <v-btn
-              class="mt-12"
-              color="blue lighten-2"
-              dark
-              large
-              href="/pre-made-themes"
-            >
-              Get Started Demo
-            </v-btn>
+            <router-link 
+            to="/demo">
+              <v-btn
+                color="blue lighten-2"
+                dark
+                large
+              >
+                Get Started with Demo
+              </v-btn>
+            </router-link>
           </v-layout>
         </v-parallax>
       </section>
@@ -42,15 +43,17 @@
           class="my-12"
           align-center
         >
-          <v-flex xs12 sm4 class="my-4">
+        <div>
+          <v-flex sm10 offset-sm1 class="my-4">
+          <!-- <v-flex xs12 sm4 class="my-4"> -->
             <div class="text-center">
               <!-- <h2 class="headline">The best way to start learning AI from scratch</h2> -->
-              <h2 class="display-2 font-weight-light">What is the best way to start learning AI from scratch?</h2>
+              <h2 class="display-1 font-weight-light">What is the best way to learn AI from scratch?</h2>
               <span class="subheading display-1 font-weight-light">
                 The answer is you need to love it first.
               </span>
             </div>
-          </v-flex>
+          
 
             <v-timeline :dense="$vuetify.breakpoint.smAndDown">
                 <v-timeline-item
@@ -67,7 +70,7 @@
                     >
                         mdi-magnify
                     </v-icon>
-                    <h2 class="display-1 white--text font-weight-light">Choose correct way to learn</h2>
+                    <h3 class="white--text font-weight-light">Choose correct way to learn</h3>
                     </v-card-title>
                     <v-container>
                     <v-row>
@@ -87,7 +90,7 @@
                 >
                 <v-card>
                     <v-card-title class="amber lighten-1 justify-end">
-                    <h2 class="display-1 mr-4 white--text font-weight-light">Know what AI is</h2>
+                    <h3 class="mr-4 white--text font-weight-light">Understand about what AI is</h3>
                     <v-icon
                         dark
                         size="42"
@@ -120,7 +123,7 @@
                     >
                         mdi-eye
                     </v-icon>
-                    <h2 class="display-1 white--text font-weight-light">Computer Vision</h2>
+                    <h3 class="white--text font-weight-light">Computer Vision</h3>
                     </v-card-title>
                     <v-container>
                     <v-row>
@@ -145,7 +148,7 @@
                 >
                 <v-card>
                     <v-card-title class="red lighten-1 justify-end">
-                    <h2 class="display-1 mr-4 white--text font-weight-light">Natural Language Processing</h2>
+                    <h3 class="mr-4 white--text font-weight-light">Natural Language Processing</h3>
                     <v-icon
                         dark
                         size="42"
@@ -180,7 +183,7 @@
                     >
                         mdi-weather-cloudy
                     </v-icon>
-                    <h2 class="display-1 white--text font-weight-light">Product</h2>
+                    <h3 class="white--text font-weight-light">Production</h3>
                     </v-card-title>
                     <v-container>
                     <v-row>
@@ -192,41 +195,25 @@
                 </v-card>
                 </v-timeline-item>
             </v-timeline>
-
+            </v-flex>
+          </div>
         </v-layout>
       </section>
 
       <section>
-        <v-carousel
-            cycle
-            height="400"
-            hide-delimiter-background
-            show-arrows-on-hover
-        >
-            <v-carousel-item
-            v-for="(slide, i) in slides"
+        <v-carousel>
+          <v-carousel-item
+            v-for="(item,i) in items"
             :key="i"
-            >
-            <v-sheet
-                :color="colors[i]"
-                height="100%"
-            >
-                <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-                >
-                <div class="display-3">{{ slide }} Slide</div>
-                </v-row>
-            </v-sheet>
-            </v-carousel-item>
+            :src="item.src"
+          ></v-carousel-item>
         </v-carousel>
       </section>
 
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-12">
-            <v-flex xs12 sm4 offset-sm1>
+            <v-flex mb-10 xs12 sm4 offset-sm1>
               <v-card flat class="transparent">
                 <v-card-title class="text-center">
                   <div class="headline">Good luck and have a good day!</div>
@@ -265,19 +252,6 @@
           </v-layout>
         </v-container>
       </section>
-
-      <v-footer color="blue darken-2">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-4">
-              Made with
-              <v-icon class="red--text">mdi-heart</v-icon>
-              by <a class="white--text" href="https://vuetifyjs.com" target="_blank">Vuetify</a>
-              and <a class="white--text" href="https://github.com/vwxyzjn">Costa Huang</a>
-            </div>
-          </v-flex>
-        </v-layout>
-      </v-footer>
     </v-content>
   </div>
 </template>
@@ -286,19 +260,22 @@
   export default {
     data () {
       return {
-        colors: [
-          'indigo',
-          'warning',
-          'pink darken-2',
-          'red lighten-1',
-          'deep-purple accent-4',
-        ],
-        slides: [
-          'First',
-          'Second',
-          'Third',
-          'Fourth',
-          'Fifth',
+        items: [
+          {
+            src: require('../assets/slide1.jpg'),
+          },
+          {
+            src: require('../assets/slide2.jpg'),
+          },
+          {
+            src: require('../assets/slide3.png'),
+          },
+          {
+            src: require('../assets/slide4.jpg'),
+          },
+          {
+            src: require('../assets/slide5.jpg'),
+          }
         ],
       }
     },

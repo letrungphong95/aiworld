@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import AppHome from './components/AppHome';
-import AppToolbar from './components/AppToolbar.vue';
+import AppDemo from './components/AppDemo.vue';
 
 Vue.use(Router);
 
@@ -11,6 +11,11 @@ export default new Router({
       path: "/",
       name: "Home",
       component: AppHome
+    },
+    {
+      path: "/demo",
+      name: "Demo",
+      component: AppDemo
     }
     // {
     //   path: "/about",

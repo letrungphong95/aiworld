@@ -1,36 +1,48 @@
 <template>
     <div>
-        <v-layout row>
-            <v-flex sm2 offset-sm3 mt-2 mb-2>
-                <v-btn 
-                    raised 
-                    class="primary" 
-                    width="1000"
-                    @click="onPickFile">Upload Image
-                </v-btn>
-                <input 
-                    type="file" 
-                    style="display:none" 
-                    ref="fileInput" 
-                    accept="image/*"
-                    @change="onFilePicked">
+        <v-layout row align="center" justify="center">
+            <v-flex sm2 offset-sm2>
+                <v-flex mt-12 mb-12>
+                    <v-btn 
+                        raised 
+                        class="primary" 
+                        width="400"
+                        @click="onPickFile">Upload Image
+                    </v-btn>    
+                    <input 
+                        type="file" 
+                        style="display:none" 
+                        ref="fileInput" 
+                        accept="image/*"
+                        @change="onFilePicked">
+                </v-flex>
+                <v-flex v-if="showImage==1 || showImage==2" mt-12 mb-12>
+                    <v-btn 
+                        raised 
+                        width="400"
+                        class="primary"
+                        color="error"
+                        @click="predictFile">Predict
+                    </v-btn>
+                </v-flex>
+                <v-flex v-if="showImage==2" mt-12 mb-12>
+                    <v-alert type="success">
+                        <h3> This is a {{ label }}</h3>
+                        <h3> Score: {{ scores }}</h3>
+                    </v-alert>
+                </v-flex>
             </v-flex>
-            <v-flex sm2 offset-sm3 mt-2 mb-2>
-                <v-btn 
-                    raised 
-                    class="primary" 
-                    @click="predictFile">Predict</v-btn>
-            </v-flex>
-        </v-layout>
-        <v-row align="center" justify="center">
+        <v-flex sm6 offset-sm2 mt-2 mb-2>
             <v-img
+                v-if="showImage"
                 :src="imageUrl"
                 aspect-ratio="1"
                 class="grey lighten-2"
-                max-width="500"
-                max-height="300"
+                max-width="600"
+                max-height="400"
             ></v-img>
-        </v-row>
+        </v-flex>
+        </v-layout>
     </div>
 </template>
 
@@ -39,8 +51,11 @@
     export default {
         data(){
             return {
-                imageUrl: require("../assets/ironman1.jpg"),
-                image: null
+                imageUrl: "",
+                showImage: 0,
+                image: null,
+                label: "",
+                scores: ""
             }
         },
         computed: {
@@ -61,6 +76,7 @@
                 const fileReader = new FileReader();
                 fileReader.addEventListener('load', () => {
                     this.imageUrl = fileReader.result;
+                    this.showImage = 1;
                 });
                 fileReader.readAsDataURL(files[0]);
                 
@@ -72,9 +88,9 @@
                     "image_path": this.imageUrl
                 })
                 .then(res => {
-                    console.log(res);
-                    console.log(res.data.label);
-                    console.log(res.data.scores);
+                    this.label = res.data.label;
+                    this.scores = res.data.scores;
+                    this.showImage = 2;
                 })
             }
         }

@@ -2,7 +2,12 @@
     <div>
         <v-layout row>
             <v-flex sm2 offset-sm3 mt-2 mb-2>
-                <v-btn raised class="primary" @click="onPickFile">Upload Image</v-btn>
+                <v-btn 
+                    raised 
+                    class="primary" 
+                    width="1000"
+                    @click="onPickFile">Upload Image
+                </v-btn>
                 <input 
                     type="file" 
                     style="display:none" 
@@ -11,7 +16,10 @@
                     @change="onFilePicked">
             </v-flex>
             <v-flex sm2 offset-sm3 mt-2 mb-2>
-                <v-btn raised class="primary" @click="predictFile">Predict</v-btn>
+                <v-btn 
+                    raised 
+                    class="primary" 
+                    @click="predictFile">Predict</v-btn>
             </v-flex>
         </v-layout>
         <v-row align="center" justify="center">
@@ -55,19 +63,18 @@
                     this.imageUrl = fileReader.result;
                 });
                 fileReader.readAsDataURL(files[0]);
-                this.image = files[0]
-                console.log(this.image)
                 
             },
             predictFile() {
-                // const fd = new FormData();
-                // console.log(this.imageUrl)
-                // fd.append('image_path',this.imageUrl)
+                const fd = new FormData();
+                fd.append('image_path',this.image);
                 axios.post('http://127.0.0.1:8000/api/object-label', {
-                    "image_path":this.image
+                    "image_path": this.imageUrl
                 })
                 .then(res => {
-                    console.log(res)
+                    console.log(res);
+                    console.log(res.data.label);
+                    console.log(res.data.scores);
                 })
             }
         }

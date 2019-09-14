@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseBadRequest, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 import simplejson as json
+import numpy as np
 import cv2
 import matplotlib.image as mpimg
 import tensorflow as tf
@@ -16,7 +17,7 @@ label = ['Cat','Dog']
 import base64 
 
 
-def preprocess_image(path, size):
+def preprocess_image(img, size):
     """
     This function preprocess test image for prediction
     Arguments:
@@ -25,8 +26,10 @@ def preprocess_image(path, size):
     Returns:
     
     """
-    # Read image from image path
-    image_decoded = mpimg.imread(path)
+    # # Read image from image path
+    # image_decoded = mpimg.imread(path)
+    imdata = np.frombuffer(img, dtype='uint8')
+    image_decoded = cv2.imdecode(imdata, cv2.IMREAD_COLOR)
     # convert to float values in [0, 1]
     image = image_decoded/ 255
     # resize image to fit the input size
@@ -45,7 +48,7 @@ Src: {APP_URL}/api/object-label
 Header: 
 Body:
 {
-	"image_path": "backend/samples/01.jpg"
+	"image_path": "base_64_image"
 } 
 Response:
 {
@@ -58,17 +61,16 @@ def predict_label(request):
     if request.method == "POST":
         data = json.loads(request.body.decode('utf-8'))
         img_path = data['image_path']
-        data = base64.b64encode(img_path)
-        print('haha'+data)
-        image = preprocess_image(path=img_path, size=224)
+        # Convert image to base64 string
+        img_base64 = bytes(img_path.split(',')[-1], 'utf-8')
+        # Convert image to byte
+        img_byte = base64.decodestring(img_base64)
+        image = preprocess_image(img=img_byte, size=224)
         global sess
         global graph
         with graph.as_default():
             set_session(sess)
-            print('hehe')
             result = model.predict(image)
-            print('haha')
-            print(result)
             return HttpResponse(json.dumps({"label":label[result.argmax()], "scores": str(round(result.max()*100, 2)) + "%"}))
     else:
         return HttpResponseBadRequest("GET is not allowed")

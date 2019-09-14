@@ -23,7 +23,8 @@
                 </v-flex>
             </div>
             <router-link 
-            to="/demo">
+            to="/demo"
+            style="text-decoration: none;">
               <v-btn
                 color="blue lighten-2"
                 dark
@@ -75,7 +76,7 @@
                     <v-container>
                     <v-row>
                         <v-col cols="12" md="12">
-                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
+                        if you are reading this lines, yeah congrat to you because of choosing exact method to learn AI.
                         </v-col>
                     </v-row>
                     </v-container>
@@ -98,11 +99,8 @@
                     </v-card-title>
                     <v-container>
                     <v-row>
-                        <v-col cols="12" md="8">
-                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit.
-                        </v-col>
-                        <v-col cols="12" md="4">
-                        Lorem ipsum dolor sit amet, no nam oblique veritus.
+                        <v-col cols="12" md="12">
+                        For simple understanding, AI is just the simulation of human brain which is processed on computer.
                         </v-col>
                     </v-row>
                     </v-container>
@@ -127,13 +125,8 @@
                     </v-card-title>
                     <v-container>
                     <v-row>
-                        <v-col
-                        v-for="n in 3"
-                        :key="n"
-                        cols="12"
-                        md="4"
-                        >
-                        Lorem ipsum dolor sit amet, no nam oblique veritus no nam oblique.
+                        <v-col cols="12" md="12">
+                        Computer Vision is one of major parts of AI. If AI is the simulation of human brain,  Computer Vision is the simulation of human eyes.
                         </v-col>
                     </v-row>
                     </v-container>
@@ -158,11 +151,8 @@
                     </v-card-title>
                     <v-container>
                     <v-row>
-                        <v-col class="hidden-sm-and-down" md="2">
-                        <v-icon size="64">mdi-server-network</v-icon>
-                        </v-col>
-                        <v-col cols="12" md="10">
-                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus.
+                        <v-col cols="12" md="12">
+                        Another major part of AI is NLP (Natual Language Processing). NLP will be the simulation of human ear and human mouth.
                         </v-col>
                     </v-row>
                     </v-container>
@@ -187,8 +177,8 @@
                     </v-card-title>
                     <v-container>
                     <v-row>
-                        <v-col>
-                        Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                        <v-col cols="12" md="12">
+                        After finishing this AI course, you can implement several simple AI applications by yourself. Then you will be supported to deploy it on web, app... to share for everyone who need it.
                         </v-col>
                     </v-row>
                     </v-container>
@@ -201,7 +191,7 @@
       </section>
 
       <section>
-        <v-carousel>
+        <v-carousel cycle>
           <v-carousel-item
             v-for="(item,i) in items"
             :key="i"

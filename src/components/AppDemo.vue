@@ -1,8 +1,13 @@
 <template>
     <div>
+        <v-card color="blue lighten-3">
+            <v-card-title class="text-center justify-center">
+                <h3 class="font-weight-bold display-2 basil--text">Dog or Cat ?</h3>
+            </v-card-title>
+        </v-card>
         <v-layout row align="center" justify="center">
             <v-flex sm2 offset-sm2>
-                <v-flex mt-12 mb-12>
+                <v-flex mt-6 mb-6>
                     <v-btn 
                         raised 
                         class="primary" 
@@ -16,7 +21,7 @@
                         accept="image/*"
                         @change="onFilePicked">
                 </v-flex>
-                <v-flex v-if="showImage==1 || showImage==2" mt-12 mb-12>
+                <v-flex v-if="showImage==1 || showImage==2" mt-6 mb-6>
                     <v-btn 
                         raised 
                         width="400"
@@ -25,7 +30,7 @@
                         @click="predictFile">Predict
                     </v-btn>
                 </v-flex>
-                <v-flex v-if="showImage==2" mt-12 mb-12>
+                <v-flex v-if="showImage==2" mt-6 mb-6>
                     <v-alert type="success">
                         <h3> This is a {{ label }}</h3>
                         <h3> Score: {{ scores }}</h3>
@@ -38,8 +43,8 @@
                 :src="imageUrl"
                 aspect-ratio="1"
                 class="grey lighten-2"
-                max-width="600"
-                max-height="400"
+                max-width="500"
+                max-height="300"
             ></v-img>
         </v-flex>
         </v-layout>

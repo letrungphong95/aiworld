@@ -191,7 +191,7 @@
       </section>
 
       <section>
-        <v-carousel cycle>
+        <v-carousel>
           <v-carousel-item
             v-for="(item,i) in items"
             :key="i"
